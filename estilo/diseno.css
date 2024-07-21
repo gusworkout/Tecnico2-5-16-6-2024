@@ -1,0 +1,79 @@
+body{
+   margin: 0;  
+   background-color: rgba(106, 98, 88, 0.744);
+   font-size: 15px;
+}
+
+h1{
+   font-size: 42px;
+   color: #000000;
+   font-weight: bolder;
+   font-style: oblique;
+   background-color: #1764f4a5;
+   width: 150px;
+}
+
+button:hover{
+    color: red;
+    cursor: pointer;
+}
+
+div.logo{
+    background-color: rgb(99, 138, 138);
+    height: 50vh;
+    width: 100%;
+    position: relative;
+    top: 30%;
+}
+div.menu{
+    background-color: azure;
+    height: 310px;
+    width: 700px;
+    margin: 25px;
+    margin-left: 20vh;
+    border-radius: 10px;
+    
+}
+div.formulario{
+    background-color: rgb(24, 62, 62);
+    height: 280px;
+    width: 280px;
+    border-radius: 10px;
+    padding: 5px ;
+
+    position: absolute;
+    top: 20%;
+    left: 60%;
+
+    align-items: center;
+   text-align: justify;
+   margin:auto;
+}
+
+input{
+    border-radius: 10px;
+    height: 30px;
+    width: 90%;
+    margin: 10px;
+}
+
+form{
+    text-align: center;
+    align-items: center;
+    margin: 25px;
+}
+button{
+   margin: 10px;
+   border-radius: 15px;
+   height: 30px;
+   border: 0px;
+}
+label{
+    font-size: 20px;
+    color: aliceblue;
+}
+
+
+.logoT:hover{
+   
+}

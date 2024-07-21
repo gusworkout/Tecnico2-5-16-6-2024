@@ -4,23 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Principal</title>
+    <link rel="stylesheet" href="stylePrincipal.css">
 </head>
 <body>
-    <header>
-    <div class="nav_bar">
-        <div class="icono">
-            <li>
-                <ul>Productos</ul>
-                <ul>Categorias</ul>
-            </li>
+   
+    <div id="menu_contenedor" class="menu">
+       <div id="logo" class="menu">
+        <div class="logo_menu"><a href="">Pagina</a></div>
+       </div>
+       <div id="busqueda" class="menu">
+        <input type="text" id="buscar_articulo">
+        <button id="buscar">Buscar</button>
+       </div>
+       <div id="cuenta" class="menu">
+        <button id="Micuenta">
+            <div id="logo_cuenta" class="cantidad">
+                <span id="logoCuenta">0</span>
+                <a href="">Mi cuenta</a>
+            </div>
+        </button>
+       </div>
+       <div id="carrito" class="menu">
+        <button id="micarrito">
+            <div id="cantidad_productos" class="cantidad">
+                <span id="cantidadProductos">0</span>
+                <a href="">Carrito</a>
+            </div>
+        </button>
+       </div>
+    </div>
+    <section id="banner_contenedor">
+        <div id="banner" class="banner">
+            <button id="izquierda" class="izq">i</button>
+            <div class="contenedor_img"></div>
+            <button id="derecha" class="der">d</button>
         </div>
-        <div class="busqueda"></div>
-        <div class="Iniciar"></div>
+    </section>
+    <div id="contenedor_principal" class="contenedorPrincipal">
+        <div id="filtros">
+            <li id="categoria">
+            Categoria
+                <ul><input type="checkbox" name="" id="cat1"> Categoria 1</ul>
+                <ul><input type="checkbox" name="" id="cat2"> Categoria 2</ul>
+                <ul><input type="checkbox" name="" id="cat3"> Categoria 3</ul>
+            </li>
+            <button id="filtros_apply">Aplicar</button>
+        </div>
+        <div id="lista_productos">
+             <div class="cuadriculaProductos"> 
+                  <div class="producto1">
+                    <div id="image"><img src="" alt=""></div>
+                    <div id="nombreProducto"><h4 id="nombre_producto">Producto</h4></div>
+                    <div id="precio"><h3 id="Precio_prducot">$ 10.000</h3></div>
+                    <div class="botonAgregar"><button id="agregar_carrito">
+                        agregar al carrito
+                    </button></div>
+                  </div>
+                  <div class="producto1">
+                    <div id="image"><img src="" alt=""></div>
+                    <div id="nombreProducto"><h4 id="nombre_producto">Producto</h4></div>
+                    <div id="precio"><h3 id="Precio_prducot">$ 10.000</h3></div>
+                    <div class="botonAgregar"><button id="agregar_carrito">
+                        agregar al carrito
+                    </button></div>
+                  </div>
+                  <div class="producto1">
+                    <div id="image"><img src="" alt=""></div>
+                    <div id="nombreProducto"><h4 id="nombre_producto">Producto</h4></div>
+                    <div id="precio"><h3 id="Precio_prducot">$ 10.000</h3></div>
+                    <div class="botonAgregar"><button id="agregar_carrito">
+                        agregar al carrito
+                    </button></div>
+                  </div>
+             </div>
+        </div>
+        <div id="informativo" class="informacion">
+             <div class="redes">
+                <li class="redes_sociales">
+                    Nuestras redes
+                    <ul><a href="">Instagram</a></ul>
+                    <ul><a href="">Facebook</a></ul>
+                    <ul><a href="">Messenger</a></ul>
+                </li>
+             </div>
+             <div class="nosotros">
+                <h2>Sobre nosotros</h2>
+                <h3> &copy; 2024 </h3>
+             </div>
+        </div>
     </div>
-    </header>
-    <div class="banner">
-        
-
-    </div>
+    <script src="app.js"></script>
 </body>
 </html>
