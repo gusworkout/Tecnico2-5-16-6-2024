@@ -8,8 +8,9 @@ div.menu{
     height: 60px;
     width: 100%;
 
+    flex-direction: column;
+    flex-wrap: nowrap;
 
-    align-items: center;
-    text-align: center;
-    justify-content: center;
+    
+    
 }
