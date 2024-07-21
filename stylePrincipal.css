@@ -7,11 +7,19 @@ div.menu{
     position: fixed;
     height: 60px;
     width: 100%;
-
+ 
     padding: 0%;
     flex-direction: column;
     flex-wrap: nowrap;
     align-items: flex-start;
     justify-content: space-between;
-    
+    top: 0;
+    box-sizing: border-box;
+
+}
+
+div.logo_menu{
+  display: flex;
+  justify-content: space-between;
+  
 }
