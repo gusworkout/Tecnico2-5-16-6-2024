@@ -50,8 +50,15 @@ document.addEventListener('DOMContentLoaded', function(){
             //CONVERTIR LOS DATOS EN JSON
             const JsonData = JSON.stringify(producto, null, 2)
 
-            const blob = Blob { }
-            const url = 
+            const blob = Blob([JsonData], {type: 'application/json' })
+            const url = URL.createObjectURL(blob)
+
+           const a = document.createElement('a');
+           a.href = 'producto.json'
+           a.download = 
+           document.body.appendChild()
+           
+
 
         }
 
