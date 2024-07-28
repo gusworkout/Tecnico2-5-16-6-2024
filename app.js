@@ -54,12 +54,18 @@ document.addEventListener('DOMContentLoaded', function(){
             const url = URL.createObjectURL(blob)
 
            const a = document.createElement('a');
-           a.href = 'producto.json'
-           a.download = 
-           document.body.appendChild()
+           a.href = url
+           a.download = 'producto.json'
+           document.body.appendChild('a')
+           a.click()
            
-
-
+           document.body.removeChild()
+           URL.revokeObjectURL(blob)
+          
+           localStorage.removeItem('producto')
+        }
+        else{
+            alert('No hay ningun producto en el carrito')
         }
 
     })  
