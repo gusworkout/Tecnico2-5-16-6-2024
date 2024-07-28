@@ -41,7 +41,21 @@ document.addEventListener('DOMContentLoaded', function(){
         
     });
     
-    
+    document.getElementById('carrito').addEventListener('click', function(){
+        
+        producto = JSON.parse(localStorage.getItem('producto'))
+
+        if(producto && producto.lenght > 0){
+            
+            //CONVERTIR LOS DATOS EN JSON
+            const JsonData = JSON.stringify(producto, null, 2)
+
+            const blob = Blob { }
+            const url = 
+
+        }
+
+    })  
 
 
 })
