@@ -1,7 +1,6 @@
 let cantidad_producto = 0;
 
 let numeroDeProductos = document.getElementById("cantidadProductos");
-let btnAgregarProducto = document.getElementById("agregar_carrito");
 
 
 function AgregarAlCarrito(){
@@ -9,4 +8,8 @@ function AgregarAlCarrito(){
     numeroDeProductos.textContent = cantidad_producto;
 }
 
-btnAgregarProducto.addEventListener('click', AgregarAlCarrito);
+
+let producto = [ ];
+
+
+
