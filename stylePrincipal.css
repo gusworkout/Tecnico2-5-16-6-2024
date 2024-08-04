@@ -9,11 +9,12 @@
   padding: 10px 20px;
 }
 
-/*2*/
+/*2*//*"/
 /*Estilo de menu principal*/
 .menu_container {
   flex: 1;
 }
+/*6*/
 .menu a {
   text-decoration: none;
   color: #333;
