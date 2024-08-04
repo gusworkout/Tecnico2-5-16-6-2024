@@ -1,75 +1,71 @@
+let cont=0;
+document.addEventListener('DOMContentLoaded', function() {
+    // Inicializar un array para almacenar los productos
+    let productos = [];
 
-
-
-    
-
-
-
-
-
-document.addEventListener('DOMContentLoaded', function(){
-    //DATOS NUEVOS
-     let cantidad_producto = 0;
-     let producto = [ ];
-     let numeroDeProductos = document.getElementById("cantidadProductos");
-
-    //OBTENER LOS DATOS ALMACENADOS EN LOCAL STORAGE
-    if(localStorage.getItem('producto')){
-        producto = JSON.parse(localStorage.getItem('producto'))
+    // Obtener datos almacenados en localStorage
+    if (localStorage.getItem('productos')) {
+        productos = JSON.parse(localStorage.getItem('productos'));
     }
 
-    //METODO PARA EL BOTON AGREGAR
+    // Añadir event listener a los botones "Agregar al carrito"
     document.querySelectorAll('.agregar_carrito').forEach(button => {
-        button.addEventListener('click', function(){
+        button.addEventListener('click', function() {
+            // Encontrar el contenedor del producto correspondiente
+            const producto = this.closest('.producto');
 
-            const productos = this.closest('.producto1');
-             
-            const nombre = productos.querySelector('.nombre_producto').innerText
-            const precio = productos.querySelector('.Precio_producto').innerText
-            
+            // Extraer el nombre y el precio del producto
+            const nombre = producto.querySelector('.nombre_producto').innerText;
+            const precio = producto.querySelector('.precio_producto').innerText;
 
-            const data = {nombre, precio};
+            // Crear objeto con los datos del producto
+            const data = { nombre, precio };
 
+            // Añadir el producto al array
             productos.push(data);
 
-            localStorage.setItem('productos', JSON.stringify(producto))
+            // Guardar el array en localStorage
+            localStorage.setItem('productos', JSON.stringify(productos));
 
-            alert('Se agregó con exito el ${nombre} al carrito')
-            cantidad_producto ++;
-            numeroDeProductos.textContent = cantidad_producto;
-        })
-        
-    });
-    
-    document.getElementById('carrito').addEventListener('click', function(){
-        
-        producto = JSON.parse(localStorage.getItem('producto'))
+            alert(`Producto ${nombre} agregado al carrito.`);
 
-        if(producto && producto.lenght > 0){
             
-            //CONVERTIR LOS DATOS EN JSON
-            const JsonData = JSON.stringify(producto, null, 2)
+            let cant = document.getElementById('cantidadProductos')
 
-            const blob = Blob([JsonData], {type: 'application/json' })
-            const url = URL.createObjectURL(blob)
+            cont ++;
+            cant.textContent = cont;
+            
+        });
+    });
 
-           const a = document.createElement('a');
-           a.href = url
-           a.download = 'producto.json'
-           document.body.appendChild('a')
-           a.click()
-           
-           document.body.removeChild()
-           URL.revokeObjectURL(blob)
-          
-           localStorage.removeItem('producto')
+    // Añadir event listener al botón "Guardar Productos"
+    document.getElementById('carrito').addEventListener('click', function() {
+        // Obtener datos almacenados en localStorage
+        const productos = JSON.parse(localStorage.getItem('productos'));
+
+        if (productos && productos.length > 0) {
+            // Convertir datos a formato JSON
+            const jsonData = JSON.stringify(productos, null, 2);
+
+            // Crear un Blob con los datos y guardarlo como un archivo
+            const blob = new Blob([jsonData], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+
+            // Crear un enlace para descargar el archivo
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'productos.json';
+            document.body.appendChild(a);
+            a.click();
+
+            // Limpiar
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+
+            // Limpiar el localStorage después de descargar
+            localStorage.removeItem('productos');
+        } else {
+            alert('No hay productos en el carrito.');
         }
-        else{
-            alert('No hay ningun producto en el carrito')
-        }
-
-    })  
-
-
-})
-
+    });
+});
