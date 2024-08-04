@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const precio = producto.querySelector('.precio_producto').innerText;
 
             // Crear objeto con los datos del producto
-            const data = { nombre, precio };
+            const data = { nombre, precio};
 
             // Añadir el producto al array
             productos.push(data);
